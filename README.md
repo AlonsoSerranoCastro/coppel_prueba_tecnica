@@ -1,6 +1,6 @@
 # coppel_prueba_tecnica
 
-![LogoCoppel](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.coppel.com%2F&psig=AOvVaw2-JZ4fZHl75phDGEaVE5TC&ust=1700078626173000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNikyv-kxIIDFQAAAAAdAAAAABAE)
+![LogoCoppel](https://cdn2.coppel.com/wcsstore/AuroraStorefrontAssetStore/emarketing/OpenGraph/og_coppel.jpg)
 
 Para la creacion del microservicio de GITHUB, se utilizo el siguiente porceso:
 1. Crear un repositorio en GitHub, marcando la opcion de agregar un archivo README al momento de la creación de este repositorio.
