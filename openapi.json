@@ -1,0 +1,171 @@
+{
+  "opeenapi": "3.0.3",
+  "info": {
+    "title": "APIREST para una base de datos de clientes.",
+    "description": "Esta API se encarga de manjear la informacion de la base de datos de los clientes para poder hacer consultas del método HTTP",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api"
+    }
+  ],
+  "tags": [
+    {
+      "name": "api",
+      "decription": "Esta es la ruta definida para el mapping de la API."
+    }
+  ],
+  "paths": {
+    "/all": null,
+    "post": {
+      "tags": [
+        "Clientes"
+      ],
+      "summary": "Este endpoint maneja toda la información de todos los clientes de la base de datos."
+    },
+    "/find": {
+      "tags": [
+        "Clientes"
+      ],
+      "summary": "Este endpoint maneja toda la información de un cliente en concreto que este dentro de la base de datos.",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "se muestra todos el cliente en que se busca especificamente.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyClientesPost"
+              }
+            }
+          }
+        },
+        "404": {
+          "$ref": "#/components/responses/NotFound"
+        },
+        "500": {
+          "$ref": "#/components/responses/ServerError"
+        }
+      }
+    },
+    "/save": null,
+    "tags": [
+      "Clientes"
+    ],
+    "summary": "Este endpoint agrega a un nuevo cliente a la base de datos, así mismo, actualiza un clienteque ya pertenece a la base de datos.",
+    "parameters": [
+      {
+        "$ref": "#/components/parameters/Id",
+        "required": true
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/BodyClientesPost"
+          }
+        }
+      },
+      "required": true
+    },
+    "responses": {
+      "200": {
+        "description": "se muestra todos el cliente en que se busca especificamente.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BodyClientesPost"
+            }
+          }
+        }
+      },
+      "404": {
+        "$ref": "#/components/responses/NotFound"
+      },
+      "500": {
+        "$ref": "#/components/responses/ServerError"
+      }
+    },
+    "/delete": {
+      "tags": [
+        "Clientes"
+      ],
+      "summary": "Este endpoint elimina a un cliente",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "se muestra un mensaje para confirmar la eliminación del cliente, de lo contrario se mueetra un mensaje diferente.",
+          "content": {
+            "application/String": {
+              "String": "Se ha eliminado el usuario correctamente"
+            }
+          }
+        },
+        "content": {
+          "application/String": {
+            "String": "No se ha eliminado el usuario"
+          }
+        }
+      }
+    },
+    "components": {
+      "responses": {
+        "NotFound": {
+          "description": "No se encontró la informacion."
+        },
+        "ServerError": {
+          "description": "Error en el servidor."
+        }
+      },
+      "parameters": {
+        "numCliente": {
+          "in": "header",
+          "description": "el número de cliente o token unico de cliente.",
+          "required": true
+        }
+      },
+      "Schemas": null,
+      "BodyClientesPost": {
+        "type": "object",
+        "properties": {
+          "numCliente": {
+            "type": "Long",
+            "description": "Número único del cliente(Id)."
+          },
+          "nombre": {
+            "type": "String",
+            "description": "Nombres del cliente."
+          },
+          "apellido": {
+            "type": "String",
+            "description": "Apellidos del cliente."
+          },
+          "fechaAlta": {
+            "type": "String",
+            "description": "Fecha en la que el cliente se agrego a la base de datos."
+          },
+          "domicilio": {
+            "type": "String",
+            "description": "Domicilio personal del cliente."
+          },
+          "status": {
+            "type": "String",
+            "description": "Status del cliente, puede ser Activo o Inactivo."
+          }
+        }
+      }
+    }
+  }
+}
