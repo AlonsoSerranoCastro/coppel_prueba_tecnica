@@ -16,7 +16,7 @@ import com.coppel.prueba.model.Cliente;
 import com.coppel.prueba.service.ClienteService;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("cliente")
 public class ApiDemo {
 	
 	@Autowired

@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "20038ddd-a088-46e0-911f-4f45b2396ada",
+		"name": "API Coppel",
+		"description": "Coleccion de prueba de los métodos HTTP, realizadas en POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31182638",
+		"_collection_link": "https://lively-shuttle-623629.postman.co/workspace/My-Workspace~cdd55601-ea03-47bb-8088-2ddba1d5186a/collection/31182638-20038ddd-a088-46e0-911f-4f45b2396ada?action=share&source=collection_link&creator=31182638"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"all"
+					]
+				},
+				"description": "Con este método GET se obtiene toda la informacion de todos los clientes de la base de datos"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un nuevo cliente a la base de datos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Juan\",\r\n        \"apellido\": \"Perez\",\r\n        \"fechaAlta\": \"21 febrero 2024\",\r\n        \"domicilio\": \"San juan de dios 1222\",\r\n        \"status\": \"Inactivo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"save"
+					]
+				},
+				"description": "Con este método POST se guarda a un nuevo cliente en la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar la información de un cliente existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numCliente\": 6,\r\n        \"nombre\": \"Juan\",\r\n        \"apellido\": \"Perez\",\r\n        \"fechaAlta\": \"21 febrero 2023\",\r\n        \"domicilio\": \"San juan de dios 1222\",\r\n        \"status\": \"Activo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"save"
+					]
+				},
+				"description": "Con este método POST se puede modificar la información de un cliente que ya esta en la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar un cliente en especifico con su número de cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numCliente\": 6,\r\n        \"nombre\": \"Juan\",\r\n        \"apellido\": \"Perez\",\r\n        \"fechaAlta\": \"21 febrero 2023\",\r\n        \"domicilio\": \"San juan de dios 1222\",\r\n        \"status\": \"Activo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/find/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"find",
+						"6"
+					]
+				},
+				"description": "Con este método GET se obtiene toda la informacion de un cliente de la base de datos, es necesario proporcionar el numCliente asigando como ID de la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar a un cliente de la base de datos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/delete/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"delete",
+						"6"
+					]
+				},
+				"description": "Con este método DELETE, se elimina a un cliente de la base de datos, es necesario proporcionar el numCliente asigando como ID de la base de datos, de ser correcta la eliminación llegara un mensaje de confirmación, de lo contrario tambien llegara un mensaje donde se hara notificar que non se pudo completar dicha petición."
+			},
+			"response": []
+		}
+	]
+}
