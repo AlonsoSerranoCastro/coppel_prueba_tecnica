@@ -1,0 +1,45 @@
+[{
+  "_id": 1,
+  "numCuenta": "1236541",
+  "tipoCredito": "Oro",
+  "fechaAlta": "21 febrero 2024",
+  "status": "Inactivo",
+  "saldo": 12500,
+  "_class": "com.coppel.prueba2.model.Credito"
+},
+{
+  "_id": 2,
+  "numCuenta": "121",
+  "tipoCredito": "Platino",
+  "fechaAlta": "1 Enero 2023",
+  "status": "Activo",
+  "saldo": 50000.25,
+  "_class": "com.coppel.prueba2.model.Credito"
+},
+{
+  "_id": 3,
+  "numCuenta": "12190",
+  "tipoCredito": "Platino",
+  "fechaAlta": "1 Enero 2020",
+  "status": "Activo",
+  "saldo": 5025000,
+  "_class": "com.coppel.prueba2.model.Credito"
+},
+{
+  "_id": 4,
+  "numCuenta": "12190",
+  "tipoCredito": "Bronce",
+  "fechaAlta": "1 Julio 2020",
+  "status": "Activo",
+  "saldo": 5125000.5,
+  "_class": "com.coppel.prueba2.model.Credito"
+},
+{
+  "_id": 5,
+  "numCuenta": "12199",
+  "tipoCredito": "Hierro",
+  "fechaAlta": "1 Diciembre 2020",
+  "status": "Inactivo",
+  "saldo": 1,
+  "_class": "com.coppel.prueba2.model.Credito"
+}]

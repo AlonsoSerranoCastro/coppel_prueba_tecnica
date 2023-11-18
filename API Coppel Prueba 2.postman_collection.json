@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "27a59fdf-cd6b-4950-98a9-45778aecb4c1",
+		"name": "API Coppel Prueba 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31182638",
+		"_collection_link": "https://lively-shuttle-623629.postman.co/workspace/My-Workspace~cdd55601-ea03-47bb-8088-2ddba1d5186a/collection/31182638-27a59fdf-cd6b-4950-98a9-45778aecb4c1?action=share&source=collection_link&creator=31182638"
+	},
+	"item": [
+		{
+			"name": "Agregar un nuevo crédito a la base de datos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n {\r\n    \"numCliente\": 1,\r\n    \"numCuenta\": \"1236541\",\r\n    \"tipoCredito\": \"Oro\",\r\n    \"fechaAlta\": \"21 febrero 2024\",\r\n    \"status\": \"Inactivo\",\r\n    \"saldo\": 12500.00\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/credito/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"credito",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar la información de un cliente existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"numCliente\": 2,\r\n    \"numCuenta\": \"121\",\r\n    \"tipoCredito\": \"Platino\",\r\n    \"fechaAlta\": \"1 Enero 2023\",\r\n    \"status\": \"Activo\",\r\n    \"saldo\": 50000.25\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/credito/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"credito",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar a todos los clientes en la base de datos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/credito/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"credito",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar a un cliente en la base de dato con su numCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/credito/find/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"credito",
+						"find",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar a un cliente de la base de datos por medio de su numCliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/credito/delete/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"credito",
+						"delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
