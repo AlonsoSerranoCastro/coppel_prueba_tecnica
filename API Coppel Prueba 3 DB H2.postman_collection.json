@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "033ed409-5df3-46b2-8a91-e99e0eb79d9a",
+		"name": "API Coppel Prueba 3 DB H2",
+		"description": "Pruebas POSTMAN en API Rest Springboot con DB embebida H2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31182638",
+		"_collection_link": "https://lively-shuttle-623629.postman.co/workspace/cdd55601-ea03-47bb-8088-2ddba1d5186a/collection/31182638-033ed409-5df3-46b2-8a91-e99e0eb79d9a?action=share&source=collection_link&creator=31182638"
+	},
+	"item": [
+		{
+			"name": "Agregar una nueva operación a la base de datos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"fechaOperacion\": \"21 febrero 2024\",\r\n    \"monto\": 50000.50,\r\n    \"status\": \"Activo\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/operaciones/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"operaciones",
+						"save"
+					]
+				},
+				"description": "Sirven tanto para crear un nuevo usuario así como para modificar alguna propiedad"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar la información de una operación existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numCuenta\": 4,\r\n    \"fechaOperacion\": \"21 febrero 2024\",\r\n    \"monto\": 2.5,\r\n    \"status\": \"Activo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/operaciones/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"operaciones",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar todas las operaciones en la base de datos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/operaciones/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"operaciones",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar una operación en la base de datos mediante su numCuenta(Id)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/operaciones/find/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"operaciones",
+						"find",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Elimina una operación de la base de datos mediante su numCuenta(Id)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/operaciones/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"operaciones",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
